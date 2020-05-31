@@ -17,7 +17,7 @@ fn main() {
     }
     
     for f in paths {
-        let mut cmd = Command::new("sh");
+        
         cmd.arg("-c").arg(format!("md5sum \"{}\"", f));
         let output = String::from_utf8_lossy(&cmd.output().unwrap().stdout).to_string();
         let vec: Vec<&str> = output.split(" ").collect();
